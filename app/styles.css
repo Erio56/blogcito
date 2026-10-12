@@ -1,7 +1,27 @@
-body{
-   all: unset;
-   width: 100vw;
-   height: 100vh;
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   width: 100%;
+   max-width: 100%;
+   overflow-x: clip;
+}
+
+body {
+   margin: 0;
+   min-height: 100vh;
+}
+
+.site-icon {
+   display: inline-block;
+   flex: 0 0 auto;
+   width: 1em;
+   height: 1em;
+   vertical-align: -0.12em;
 }
 
 @font-face {

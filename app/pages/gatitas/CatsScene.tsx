@@ -1,5 +1,6 @@
 
 import { motion, useReducedMotion } from "motion/react";
+import { SiteIcon } from "~/components/SiteIcon";
 import "./CatsScene.css";
 
 const cats = [
@@ -9,7 +10,7 @@ const cats = [
     nickname: "Bastión de la discordia",
     description:
       "Se sube a las cortinas y siempre está buscando un sitio alto.",
-    image: "/images/cats/cat-one.jpg",
+    image: "/assets/gatas/mahoro.jpg",
     note: "Probably plotting something",
   },
   {
@@ -18,15 +19,27 @@ const cats = [
     nickname: "Está gordísima",
     description:
       "Se caga en mi habitación y me aruña el colchón.",
-    image: "/images/cats/cat-two.jpg",
+    image: "/assets/gatas/kafuu.jpg",
     note: "Currently judging you",
   },
 ];
 
 const gallerySlots = [
-  { label: "1", shape: "gallery-wide" },
-  { label: "2", shape: "gallery-tall" },
-  { label: "3", shape: "gallery-square" },
+  {
+    label: "Mahoro",
+    shape: "gallery-wide",
+    image: "/assets/gatas/mahoro.jpg",
+  },
+  {
+    label: "Kafuu",
+    shape: "gallery-tall",
+    image: "/assets/gatas/kafuu.jpg",
+  },
+  {
+    label: "Silly Mahoro",
+    shape: "gallery-square",
+    image: "/assets/gatas/sillymaho.jpg",
+  },
 ];
 
 export default function CatsScene() {
@@ -34,12 +47,14 @@ export default function CatsScene() {
 
   return (
     <section className="cats-scene">
-      <div className="cats-decoration cats-decoration-one" aria-hidden="true">
-        ✳
-      </div>
-      <div className="cats-decoration cats-decoration-two" aria-hidden="true">
-        𓃠
-      </div>
+      <SiteIcon
+        name="sparkle"
+        className="cats-decoration cats-decoration-one site-icon"
+      />
+      <SiteIcon
+        name="cat"
+        className="cats-decoration cats-decoration-two site-icon"
+      />
 
       <header className="cats-header">
         <motion.h1
@@ -106,7 +121,7 @@ export default function CatsScene() {
         ))}
       </div>
 
-      <section className="cats-gallery">
+      {/* <section className="cats-gallery">
         <motion.div
           className="cats-gallery-heading"
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
@@ -128,13 +143,15 @@ export default function CatsScene() {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ delay: index * 0.12, duration: 0.6 }}
             >
-              <span className="gallery-placeholder-icon">＋</span>
-              <span>{slot.label}</span>
-              <small>Photo {index + 1}</small>
+              <img src={slot.image} alt={`${slot.label}, one of my cats`} />
+              <span className="cats-gallery-caption">
+                <span>{slot.label}</span>
+                <small>Photo {index + 1}</small>
+              </span>
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <motion.footer
         className="cats-footer"
@@ -142,7 +159,7 @@ export default function CatsScene() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span aria-hidden="true">♡</span>
+        <SiteIcon name="heart" className="site-icon" />
         <p>las amo.</p>
       </motion.footer>
     </section>

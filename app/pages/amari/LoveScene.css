@@ -93,6 +93,12 @@
   font-size: 2.5rem;
 }
 
+.love-photo-placeholder .site-icon {
+  width: 1em;
+  height: 1em;
+  color: var(--love-accent);
+}
+
 .love-photo-placeholder p {
   margin: 6px 0;
   font-family: var(--cursive);
@@ -154,9 +160,14 @@
 }
 
 .love-heart {
-  display: inline-block;
+  display: inline-flex;
   color: var(--love-accent);
   font-size: 1.15rem;
+}
+
+.love-heart .site-icon {
+  width: 1em;
+  height: 1em;
 }
 
 .love-closing {
@@ -184,21 +195,30 @@
   .love-note {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 32px;
+    gap: 24px;
     width: min(100%, 400px);
-    padding: 28px 24px;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: clamp(20px, 6vw, 28px);
   }
 
   .love-photo {
     width: min(65%, 200px);
+    box-sizing: border-box;
   }
 
   .love-message {
     width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .love-message h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+
+  .love-message > p {
+    overflow-wrap: anywhere;
   }
 
   .love-closing {

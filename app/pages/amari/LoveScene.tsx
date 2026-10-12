@@ -1,5 +1,6 @@
 
 import { motion, useReducedMotion } from "motion/react";
+import { SiteIcon } from "~/components/SiteIcon";
 import "./LoveScene.css";
 
 const shootingStars = [
@@ -72,7 +73,7 @@ export default function LoveScene() {
               event.currentTarget.style.display = "none";
             }}
           />
-            <span>♡</span>
+            <SiteIcon name="heart" className="site-icon" />
           </div>
           <span className="love-photo-caption">hehe</span>
         </div>
@@ -109,7 +110,7 @@ export default function LoveScene() {
               }}
               aria-label="heart"
             >
-              ♥
+              <SiteIcon name="heart" className="site-icon" />
             </motion.span>
           </div>
         </div>

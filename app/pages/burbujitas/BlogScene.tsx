@@ -6,6 +6,7 @@ import {
   useTransform,
 } from "motion/react";
 import { Bubble } from "../../components/Bubble";
+import { SiteIcon } from "~/components/SiteIcon";
 import "./BlogScene.css";
 
 const bubbles = [
@@ -17,6 +18,10 @@ const bubbles = [
     x: "clamp(24px, calc(50% - 650px), 320px)",
     y: "102px",
     delay: 0,
+    image: {
+      src: "/assets/kanoone.jpg",
+      alt: "Two anime characters posing together",
+    },
     mobileOrder: 1,
     interaction: {
       href: "https://www.youtube.com/channel/UCShXNLMXCfstmWKH_q86B8w",
@@ -33,7 +38,7 @@ const bubbles = [
     mobileOrder: 2,
     items: ["Adachi and Shimamura", " Kitanai Kimi ga Ichiban Kawaii (no soy redflag lo juro)", " Tensei Oujo to Tensai Reijou no Mahou Kakumei ", "Yagate Kimi ni Naru", " Kamiina Botan, Yoeru Sugata wa Yuri no Hana"],
     image: {
-      src: "/assets/wife.png",
+      src: "/assets/shima.jpg",
       alt: "Two anime characters posing together",
     },
   },
@@ -44,6 +49,10 @@ const bubbles = [
     x: "clamp(24px, calc(50% - 650px), 320px)",
     y: "536px",
     delay: 0.8,
+    image: {
+      src: "/assets/Veko_Young.webp",
+      alt: "Made in abyss vueko"
+    },
     mobileOrder: 4,
     interaction: {
       href: "https://anilist.co/user/Erio56/",
@@ -53,11 +62,12 @@ const bubbles = [
   {
     title: "Juegos",
     description: "Algunos juegos que me gustan.",
+    content: "",
     x: "clamp(50%, calc(50% + 280px), calc(100% - 264px))",
     y: "587px",
     delay: 1.2,
     mobileOrder: 5,
-    items: ["Halo (mi saga favorita)", "Apex Legends (Le tengo 3k+ horas)", "Subnautica", "Aokana", "Minecraft", "Elden ring", "Minecraft", "Cities Skylines", "Persona 3 Reloaded", "Persona 4 Golder"],
+    items: ["Halo (mi saga favorita)", "Apex Legends (Le tengo 3k+ horas)", "Subnautica", "Aokana", "Minecraft", "Elden ring", "Minecraft", "Cities Skylines", "Persona 3 Reloaded", "Persona 4 Golden"],
   },
 ];
 
@@ -118,13 +128,20 @@ export default function BlogScene() {
     <main className="blog-page">
     <Wave />
       <header className="blog-header">
-        <p className="eyebrow">~✦✳✦~~✳✦✳--------✳✦✳~~✦✳✦~</p>
+        <p className="eyebrow" aria-hidden="true">
+          <SiteIcon name="sparkle" className="site-icon" />
+          <SiteIcon name="sparkle" className="site-icon" />
+          <span>----------------</span>
+          <SiteIcon name="sparkle" className="site-icon" />
+          <SiteIcon name="sparkle" className="site-icon" />
+        </p>
         <h1>Things I enjoy.</h1>
-        <p>Scroll around. Pick a bubble.</p>
+        <p>Clickea las burbujas para los detalles.</p>
       </header>
 
       <section
         ref={sceneRef}
+        id="blog-scene"
         className="bubble-scene"
         aria-label="Explore my personal blog"
       >
@@ -165,17 +182,26 @@ export default function BlogScene() {
               {
                 name: "YouTube Music",
                 href: "https://music.youtube.com/@erio056",
-                mark: "♪",
+                icon: "music" as const,
+                mark: null,
               },
               {
                 name: "AniList",
                 href: "https://anilist.co/user/Erio56/",
+                icon: null,
                 mark: "A",
               },
               {
                 name: "Twitter",
                 href: "https://x.com/erio_56",
-                mark: "𝕏",
+                icon: "x" as const,
+                mark: null,
+              },
+              {
+                name: "Instagram",
+                href: "https://www.instagram.com/kafuu_56",
+                icon: "instagram" as const,
+                mark: null,
               },
             ].map((social, index) => (
               <motion.li
@@ -192,7 +218,11 @@ export default function BlogScene() {
               >
                 <a href={social.href} target="_blank" rel="noreferrer">
                   <span className="blog-social-mark" aria-hidden="true">
-                    {social.mark}
+                    {social.icon ? (
+                      <SiteIcon name={social.icon} className="site-icon" />
+                    ) : (
+                      social.mark
+                    )}
                   </span>
                   {social.name}
                 </a>

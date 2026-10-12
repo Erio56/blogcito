@@ -63,7 +63,7 @@ export function Bubble({
           <span className="bubble-title">{title}</span>
           <span className="bubble-description">{description}</span>
           <span className="bubble-hint">
-            {expanded ? "Close −" : "Explore +"}
+            {expanded ? "- Cerrar" : "Explorar +"}
           </span>
         </button>
 

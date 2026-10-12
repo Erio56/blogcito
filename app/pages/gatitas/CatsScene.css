@@ -124,7 +124,7 @@
 }
 
 .cat-nickname {
-  color: #a184b0;
+  color: var(--cats-accent);
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -139,7 +139,7 @@
 }
 
 .cat-card-content > p {
-  color: #817786;
+  color: var(--cats-text);
   font-size: 0.9rem;
   line-height: 1.8;
   font-family: var(--normal);
@@ -182,17 +182,50 @@
 }
 
 .cats-gallery-slot {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-width: 0;
-  border: 1.5px dashed #d8c6e0;
+  overflow: hidden;
+  border: 1.5px solid #d8c6e0;
   border-radius: 20px;
-  background: rgb(255 255 255 / 55%);
+  background: var(--cats-border);
   color: #947ca0;
   text-align: center;
+}
+
+.cats-gallery-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cats-gallery-caption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 14px;
+  background: rgb(45 35 50 / 58%);
+  color: #fff;
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+
+.cats-gallery-caption small {
+  opacity: 0.75;
+  font-size: 0.7rem;
 }
 
 .gallery-wide {
@@ -253,9 +286,10 @@
   text-align: center;
 }
 
-.cats-footer > span {
+.cats-footer > .site-icon {
+  width: 2rem;
+  height: 2rem;
   color: #b18cc5;
-  font-size: 2rem;
 }
 
 .cats-footer p {

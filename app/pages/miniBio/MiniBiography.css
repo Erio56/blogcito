@@ -61,8 +61,27 @@
   font-size: 2rem;
 }
 
-.heart{
-  color: #c30915 !important;
+.bio-sticker .site-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.bio-flag {
+  width: 1.15em;
+  height: 0.77em;
+  border-radius: 2px;
+  vertical-align: -0.05em;
+}
+
+.bio-footer-heart {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: #c30915;
+}
+
+.bio-footer-heart .site-icon {
+  width: 1em;
+  height: 1em;
 }
 
 .bio-overline {
@@ -155,7 +174,8 @@
   right: 15%;
   bottom: 13%;
   color: var(--bio-lilac-muted);
-  font-size: 1.6rem;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .bio-floating-note {
@@ -169,17 +189,49 @@
   transform: rotate(-4deg);
 }
 
+.bio-scroll-hint {
+  position: absolute;
+  bottom: 52px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  color: var(--bio-accent-medium);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-family: var(--alt-cursive);
+}
+
+.bio-scroll-hint:hover {
+  color: var(--bio-accent-medium);
+  text-decoration: none;
+}
+
+.bio-scroll-hint svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 @media (max-width: 600px) {
   .mini-bio-scene {
     min-height: auto;
-    padding: 100px 20px;
+    padding: 100px 20px 120px;
   }
 
   .mini-bio-card {
     padding: 28px 24px;
     border-radius: 24px;
     box-sizing: border-box;
-    margin: 1rem;
   }
 
   .bio-sticker {
@@ -198,6 +250,10 @@
     right: 24px;
     bottom: 45px;
     font-size: 0.8rem;
+  }
+
+  .bio-scroll-hint {
+    bottom: 46px;
   }
 
   .bio-orbit-one {

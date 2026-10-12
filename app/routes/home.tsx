@@ -8,9 +8,17 @@ import RandomMediaScene from "~/pages/randomMedia/RandomMediaScene";
 import Wip from "~/pages/wip/wip";
 
 export function meta({}: Route.MetaArgs) {
+  const description =
+    "A personal corner of the internet by Erio, filled with music, anime, games, and little thoughts.";
+
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Erio" },
+    { name: "author", content: "Erio" },
+    { name: "description", content: description },
+    { property: "og:title", content: "Erio" },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
   ];
 }
 

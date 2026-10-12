@@ -12,12 +12,15 @@
 
 .wip-card {
   width: min(100%, 540px);
+  min-width: 0;
   padding: clamp(28px, 5vw, 48px);
+  box-sizing: border-box;
   border: 1px solid rgba(88, 69, 96, 0.16);
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 20px 52px rgba(60, 46, 66, 0.08);
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .wip-kicker {
@@ -39,7 +42,7 @@
 }
 
 .wip-copy {
-  max-width: 32ch;
+  max-width: 100%;
   margin: 18px auto 0;
   color: var(--text-color-dark);
   font-size: 1rem;
@@ -61,7 +64,8 @@
   }
 
   .wip-card {
-    padding: 26px 22px;
+    width: 100%;
+    padding: 24px clamp(18px, 6vw, 22px);
     border-radius: 20px;
   }
 

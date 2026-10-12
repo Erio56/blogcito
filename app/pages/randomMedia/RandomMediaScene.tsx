@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
+import { SiteIcon } from "~/components/SiteIcon";
 import "./RandomMediaScene.css";
 
 type MediaItem = {
@@ -108,7 +109,10 @@ export default function RandomMediaScene() {
 
             <div className="media-label">
               <span>{item.label}</span>
-              <span className="media-sparkle">✳</span>
+              <SiteIcon
+                name="sparkle"
+                className="media-sparkle site-icon"
+              />
             </div>
           </motion.article>
         ))}
@@ -121,7 +125,8 @@ export default function RandomMediaScene() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <span>no theme, no reason.</span> just things I wanted to keep ♡
+        <span>no theme, no reason.</span> just things I wanted to keep{" "}
+        <SiteIcon name="heart" className="site-icon" />
       </motion.p>
     </section>
   );

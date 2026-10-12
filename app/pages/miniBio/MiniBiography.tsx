@@ -6,6 +6,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useRef } from "react";
+import { SiteIcon } from "~/components/SiteIcon";
 import "./MiniBiography.css";
 
 export default function MiniBiography() {
@@ -60,7 +61,7 @@ export default function MiniBiography() {
           ease: "linear",
         }}
       >
-        <span className="bio-orbit-star">ᓚᘏᗢ</span>
+        <SiteIcon name="cat" className="site-icon bio-orbit-star" />
       </motion.div>
 
       <motion.article
@@ -102,18 +103,18 @@ export default function MiniBiography() {
           }}
           aria-hidden="true"
         >
-          ☂
+          <SiteIcon name="umbrella" className="site-icon" />
         </motion.div>
 
-        <motion.p
+        <motion.div
           className="bio-overline"
           initial={reduceMotion ? false : { opacity: 0, x: -15 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Holaaaap! Soy Erio <span>(She/Her)</span>౨ৎ
-        </motion.p>
+          Holaaaap! Soy Erio <span>(She/Her)</span>
+        </motion.div>
 
         <motion.h2
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
@@ -126,7 +127,7 @@ export default function MiniBiography() {
           <span>doing silly stuff.</span>
         </motion.h2>
 
-        <motion.p
+        <motion.div
           className="bio-copy"
           initial={reduceMotion ? false : { opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,12 +140,13 @@ export default function MiniBiography() {
             desde que aprendí a programar.
           </p>
           <p>
-            Tengo 24 y soy de Colombia 🇨🇴!!!.
+            Tengo 24 y soy de Colombia{" "}
+            <SiteIcon name="colombia" className="site-icon bio-flag" />!!!.
           </p>
           <p>
             I can speak English and Español.
           </p>
-        </motion.p>
+        </motion.div>
 
         <motion.p
           className="bio-copy bio-copy-secondary"
@@ -157,13 +159,14 @@ export default function MiniBiography() {
         </motion.p>
 
         <div className="bio-card-footer">
-          <span>Mi cumple es el 26 de abril por si me queres dar un regalito wink wink hehe 🩷~</span>
+          <span>Mi cumple es el 26 de abril por si me queres dar un regalito wink wink hehe~</span>
           <motion.span
+            className="bio-footer-heart"
             animate={reduceMotion ? undefined : { rotate: [0, 12, 0] }}
             transition={{ duration: 3, repeat: Infinity }}
             aria-hidden="true"
           >
-            <span className="heart">♡</span>
+            <SiteIcon name="heart" className="site-icon" />
           </motion.span>
         </div>
       </motion.article>
@@ -183,6 +186,23 @@ export default function MiniBiography() {
       >
         currently evolving...
       </motion.span>
+
+      <motion.a
+        className="bio-scroll-hint"
+        href="#blog-scene"
+        aria-label="Desliza hacia abajo para explorar el blog"
+        animate={reduceMotion ? undefined : { y: [0, 7, 0] }}
+        transition={{
+          duration: 1.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <span>hay más abajitoooo, haz scroll!!</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m5 9 7 7 7-7" />
+        </svg>
+      </motion.a>
     </section>
   );
 }
