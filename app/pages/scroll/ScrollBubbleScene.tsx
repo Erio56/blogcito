@@ -15,10 +15,10 @@ const items: {
   {
     id: "1",
     eyebrow: "Kano",
-    title: "sdfsadfsadfsadf",
+    title: "Yoru ga Kureba Mata",
     ytVideo: {
-      id: 'vKDa7yfpd2M',
-      title: 'asdfsdaf'
+      id: 'lzil9xE0wrM',
+      title: 'Yoru ga Kureba Mata'
     }
   },
   {
@@ -61,9 +61,10 @@ export default function ScrollBubbleScene() {
   return (
     <section className="scroll-bubble-scene rain">
       <header className="scroll-scene-header">
-        <span className="scene-kicker">music and stuff</span>
-        <h1>A few things i like, in no particular order.</h1>
-        <p>meow</p>
+        <h1>Cositas que me gustan.</h1>
+        <p>Disfruto de canciones melancólicas y quizás algo depresivas</p>
+        <p>Pero por alguna razón, me hacen sentir que merece la pena vivir la vida. Me motivan de cierta forma.</p>
+        <p>Supongo que me gusta dejarme a la mercer de la melancolía para luego reflexionar.</p>
       </header>
 
       <div className="scroll-bubble-list">

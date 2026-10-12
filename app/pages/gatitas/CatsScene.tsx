@@ -6,18 +6,18 @@ const cats = [
   {
     id: "cat-one",
     name: "Mahoro",
-    nickname: "La profeta de la discordia",
+    nickname: "Bastión de la discordia",
     description:
-      "se me sube a las cortinas",
+      "Se sube a las cortinas y siempre está buscando un sitio alto.",
     image: "/images/cats/cat-one.jpg",
     note: "Probably plotting something",
   },
   {
     id: "cat-two",
     name: "Kafuu",
-    nickname: "Goorda",
+    nickname: "Está gordísima",
     description:
-      "dice miau",
+      "Se caga en mi habitación y me aruña el colchón.",
     image: "/images/cats/cat-two.jpg",
     note: "Currently judging you",
   },
@@ -48,7 +48,7 @@ export default function CatsScene() {
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.6 }}
         >
-          aquí pondré un súper título
+          Mis hijas
           <br />
           <span>miau.</span>
         </motion.h1>
@@ -59,7 +59,7 @@ export default function CatsScene() {
           viewport={{ once: true }}
           transition={{ delay: 0.25, duration: 0.6 }}
         >
-          Comen y cagan igual las quiero
+          Comen y cagan igual las quiero.
         </motion.p>
       </header>
 
@@ -101,10 +101,6 @@ export default function CatsScene() {
               <span className="cat-nickname">{cat.nickname}</span>
               <h2>{cat.name}</h2>
               <p>{cat.description}</p>
-              <div className="cat-note">
-                <span aria-hidden="true">✦</span>
-                {cat.note}
-              </div>
             </div>
           </motion.article>
         ))}

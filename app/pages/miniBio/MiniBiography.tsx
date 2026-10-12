@@ -161,7 +161,7 @@ export default function MiniBiography() {
             transition={{ duration: 3, repeat: Infinity }}
             aria-hidden="true"
           >
-            ♡
+            <span className="heart">♡</span>
           </motion.span>
         </div>
       </motion.article>

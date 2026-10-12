@@ -61,6 +61,10 @@
   font-size: 2rem;
 }
 
+.heart{
+  color: #c30915 !important;
+}
+
 .bio-overline {
   margin: 48px 0 14px;
   color: var(--bio-accent-medium);

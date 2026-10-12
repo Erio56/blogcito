@@ -64,33 +64,33 @@ export default function LoveScene() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="love-photo">
+          <div className="love-photo-placeholder">
           <img
-            src="/"
+            src="./assets/wife2.png"
             alt=""
             onError={(event) => {
               event.currentTarget.style.display = "none";
             }}
           />
-          <div className="love-photo-placeholder">
             <span>♡</span>
-            aqui imagen erio
           </div>
-          <span className="love-photo-caption">mi media naranja</span>
+          <span className="love-photo-caption">hehe</span>
         </div>
 
         <div className="love-message">
           <h2>
-            Amawi
+            Amari
             <br />
-            <span>part of life.</span>
+            <span>Mi wawa.</span>
           </h2>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi laboriosam quasi magnam voluptatum repellat cum velit temporibus exercitationem commodi.
+            Donde pertenezco es aquí, a tu lado.
           </p>
 
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quo!
+            Gracias por alegrar mis días siendo tú; siendo esa personita tan linda, cuty y silly que eres.
+            Te acompañaré en tus mejores y peores momentos.
           </p>
 
           <div className="love-signature">
@@ -122,8 +122,8 @@ export default function LoveScene() {
         viewport={{ once: true }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        Algo cursi
-        <span> meow.</span>
+        Te amo.
+        <span> <a href="https://youtu.be/geRRccZrJzY" target="_blank">Amarii</a></span>
       </motion.p>
     </section>
   );

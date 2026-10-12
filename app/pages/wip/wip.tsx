@@ -4,12 +4,11 @@ const Wip = () => {
   return (
     <section className="wip-scene" aria-labelledby="wip-title">
       <article className="wip-card">
-        <p className="wip-kicker">still in progress</p>
-        <h1 id="wip-title">coming soon</h1>
+        <h1 id="wip-title">WIP</h1>
         <p className="wip-copy">
-          I&apos;m putting together the next part of this little corner of the web.
-          Check back soon for updates.
+          Estoy empezando a construir este sitio, y decidí hacerlo con React así que iterar el algo lento jajajaa.
         </p>
+        <p className="wip-copy">Poco a poco iré añadiendo más contenido, interactibilidad y también easter eggs</p>
       </article>
     </section>
   );

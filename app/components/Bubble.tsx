@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { FloatingBubble } from "./FloatingBubble";
 import "./bubble.css";
@@ -12,38 +11,18 @@ type BubbleProps = {
   y: string;
   delay?: number;
   mobileOrder: number;
-  interaction?: string;
-  interactionMethod?: 'button' | 'anchor';
+  image?: {
+    src: string;
+    alt: string;
+  };
+  interaction?: {
+    href: string;
+    label: string;
+  };
+  items?: string[];
+  expanded: boolean;
+  onToggle: () => void;
 };
-
-
-const BubbleInteraction = (interaction: string, interactionMethod: 'button' | 'anchor' ) => {
-  if (interactionMethod === 'button') {
-    return (
-      <button
-        type="button"
-        className="bubble-interaction"
-        onClick={() => alert(interaction)}
-      >
-        {interaction}
-      </button>
-    );
-  } else if (interactionMethod === 'anchor') {
-    return (
-      <a
-        href={interaction}
-        className="bubble-interaction"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {interaction}
-      </a>
-    );
-  } else {
-    return null;
-  }
-}
-
 
 export function Bubble({
   title,
@@ -54,51 +33,71 @@ export function Bubble({
   delay = 0,
   mobileOrder,
   interaction,
-  interactionMethod
+  image,
+  items,
+  expanded,
+  onToggle,
 }: BubbleProps) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <FloatingBubble
       x={x}
       y={y}
       delay={delay}
-      className={`bubble-wrapper mobile-order-${mobileOrder}`}
+      className={`bubble-wrapper mobile-order-${mobileOrder}${expanded ? " is-expanded" : ""}`}
     >
-      <motion.button
-        type="button"
+      <motion.div
         className="bubble"
         layout
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
-        onClick={() => setExpanded((current) => !current)}
-        aria-expanded={expanded}
       >
-        <span className="bubble-title">{title}</span>
-
-        <span className="bubble-description">
-          {description}
-        </span>
+        <button
+          type="button"
+          className="bubble-toggle"
+          onClick={onToggle}
+          aria-expanded={expanded}
+        >
+          <span className="bubble-title">{title}</span>
+          <span className="bubble-description">{description}</span>
+          <span className="bubble-hint">
+            {expanded ? "Close −" : "Explore +"}
+          </span>
+        </button>
 
         <AnimatePresence initial={false}>
           {expanded && (
-            <motion.span
+            <motion.div
               className="bubble-content"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
             >
-              {content}
-              {(interaction && interactionMethod) && BubbleInteraction(interaction, interactionMethod)}
-            </motion.span>
+              {image && (
+                <img className="bubble-image" src={image.src} alt={image.alt} />
+              )}
+              <span>{content}</span>
+              {items && items.length > 0 && (
+                <ul className="bubble-items">
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+              {interaction && (
+                <a
+                  href={interaction.href}
+                  className="bubble-interaction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {interaction.label}
+                </a>
+              )}
+            </motion.div>
           )}
         </AnimatePresence>
-
-        <span className="bubble-hint">
-          {expanded ? "Close −" : "Explore +"}
-        </span>
-      </motion.button>
+      </motion.div>
     </FloatingBubble>
   );
 }
