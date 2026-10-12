@@ -1,5 +1,10 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import BlogScene from "../pages/burbujitas/BlogScene";
+import ScrollBubbleScene from "~/pages/scroll/ScrollBubbleScene";
+import MiniBiography from "~/pages/miniBio/MiniBiography";
+import CatsScene from "~/pages/gatitas/CatsScene";
+import LoveScene from "~/pages/amari/LoveScene";
+import RandomMediaScene from "~/pages/randomMedia/RandomMediaScene";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +14,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <>
+    <MiniBiography/>
+    <BlogScene />;
+    <ScrollBubbleScene/>
+    <CatsScene/>
+    <LoveScene />
+    <RandomMediaScene/>
+  </> 
 }

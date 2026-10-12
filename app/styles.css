@@ -1,0 +1,109 @@
+
+body{
+   all: unset;
+   width: 100vw;
+   height: 100vh;
+}
+
+/* 5e4948 */
+/* 442d2c */
+
+@font-face {
+   font-family: "Sunday April";
+   src: url("/public/fonts/Sunday\ April.ttf")
+}
+
+:root {
+
+   /* text */
+   --text-color: #faf7fd;
+   --text-color-muted: #827786;
+   --text-color-dark: #23171a;
+   --text-anchor-color: #CF8085;
+
+   /* fonts */
+   --cursive: "Sunday April", cursive;
+   --normal: Inter, sans-serif;
+   --alt-font: "Convergence", sans-serif;
+
+
+
+  /* Blog scene */
+  --blog-background: #f0e8eb;
+  --blog-text: #402B30;
+  --blog-hl-text: #CCCCFF;
+  --blog-accent: #CCCCFF;
+  --blog-shadow: rgb(40 30 60 / 8%);
+  --blog-border: rgb(100 90 110 / 15%);
+  --blog-surface: #483237e8;
+
+  /* Mini biography */
+  --bio-text: #CCCCFF;
+  --bio-background: #4B342B;
+  --bio-accent: #F8DEE9;
+  --bio-accent-soft: #4B342B;
+  --bio-accent-medium: #5e4948;
+  --bio-muted: #716977;
+  --bio-muted-soft: #8a7b91;
+  --bio-lilac: #F8DEE9;
+  --bio-lilac-light: #402B30;
+  --bio-lilac-muted: #402B30;
+  --bio-neutral: #F8DEE9;
+  --bio-border: rgba(151, 120, 178, 0.24);
+  --bio-border-soft: #402B30;
+  --bio-shadow: rgb(105 85 120 / 14%);
+  --bio-surface: rgba(231, 230, 230, 0.922);
+  --bio-shadow-strong: rgba(248, 222, 233, 0.1);
+  --bio-shadow-soft: rgb(62 45 75 / 5%);
+  --bio-decoration: rgba(140, 67, 204, 0.6);
+
+  /* Cats scene */
+  --cats-text: #3e3545;
+  --cats-background: #fbf8fc;
+  --cats-accent: #9878a8;
+  --cats-accent-soft: #a17db5;
+  --cats-muted: #827786;
+  --cats-white: #fff;
+  --cats-border: #eee5f3;
+
+  /* Love scene */
+  --love-text: var(--cats-text);
+  --love-background: var(--cats-background);
+  --love-accent: var(--cats-accent);
+  --love-muted: var(--cats-muted);
+  --love-paper: #fff;
+
+  /* Random media scene */
+  --media-ink: #34302f;
+  --media-muted: #8d8582;
+  --media-paper: #fbf8f3;
+  --media-accent: #c58d91;
+  --media-overlay: rgb(24 20 22 / 65%);
+  --media-overlay-soft: rgb(24 20 22 / 58%);
+  --media-index-background: rgb(30 25 25 / 22%);
+  --media-index-border: rgb(255 255 255 / 40%);
+}
+
+a{
+   color: var(--text-anchor-color);
+   text-decoration: none;
+}
+
+a:hover{
+   color: var(--text-anchor-color);
+   text-decoration: underline;
+   font-weight: 600;
+   text-decoration-thickness: 1px;
+}
+
+a:focus-visible{
+   outline: 2px solid var(--text-anchor-color);
+   outline-offset: 4px;
+}
+
+a:active{
+   color: var(--text-anchor-color);
+   text-decoration: underline;
+   font-weight: 600;
+   text-decoration-thickness: 1px;
+}

@@ -1,0 +1,215 @@
+.blog-page {
+  min-height: 150vh;
+  overflow: clip;
+  background: var(--blog-background);
+  color: var(--blog-surface);
+  font-family: var(--normal);
+}
+
+.blog-header {
+  padding: 12vh 24px 5vh;
+  text-align: center;
+}
+
+.blog-header h1 {
+  max-width: 800px;
+  margin: 16px auto;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: color-mix(in srgb, var(--blog-text) 50%, transparent);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-family: var(--cursive);
+}
+
+.bubble-scene {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 1rem;
+  box-sizing: border-box;
+  height: 850px;
+  margin-inline: auto;
+  isolation: isolate;
+}
+
+.illustration-position {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.central-illustration {
+  display: block;
+  width: min(60%, 520px);
+  max-height: 75%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.bubble-position {
+  position: absolute;
+  z-index: 1;
+}
+
+.bubble-float {
+  will-change: transform;
+}
+
+.bubble-wrapper {
+  width: 240px;
+  max-width: calc(100vw - 32px);
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--blog-border);
+  border-radius: 24px;
+  background: var(--blog-surface);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px var(--blog-shadow);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--blog-accent);
+}
+
+.bubble:focus-visible {
+  outline: 2px solid var(--blog-accent);
+  outline-offset: 4px;
+}
+
+.bubble-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bubble-description,
+.bubble-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.bubble-content {
+  display: block;
+  font-weight: 400;
+  font-family: var(--alt-font);
+  font-style: italic;
+}
+
+.bubble-hint {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.blog-footer {
+  padding: 8rem 24px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .blog-header {
+    padding: 8vh 20px 3vh;
+  }
+
+  .bubble-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 16px 20px 40px;
+  }
+
+  /* Turn the desktop absolute layout into a mobile list. */
+  .bubble-position {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto;
+    max-width: 100%;
+    flex-shrink: 0;
+  }
+
+  .illustration-position {
+    position: relative;
+    inset: auto;
+    order: 3;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+    padding: 12px 0;
+    z-index: 0;
+  }
+
+  .central-illustration {
+    width: min(78%, 320px);
+    max-height: 300px;
+  }
+
+  /* Two bubbles above the illustration. */
+  .mobile-order-1 {
+    order: 1;
+    align-self: flex-start;
+    margin-left: 2%;
+  }
+
+  .mobile-order-2 {
+    order: 2;
+    align-self: flex-end;
+    margin-right: 1%;
+  }
+
+  /* Two bubbles below the illustration. */
+  .mobile-order-4 {
+    order: 4;
+    align-self: flex-start;
+    margin-left: 1%;
+  }
+
+  .mobile-order-5 {
+    order: 5;
+    align-self: flex-end;
+    margin-right: 2%;
+  }
+
+  .bubble-wrapper {
+    width: min(240px, 78vw);
+  }
+
+  .bubble {
+    width: 100%;
+    padding: 16px;
+    gap: 8px;
+    border-radius: 20px;
+    background: rgb(255 255 255 / 82%);
+    box-shadow: 0 10px 32px rgb(40 30 60 / 9%);
+  }
+
+  .blog-footer {
+    padding: 5rem 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble-float {
+    animation: none;
+  }
+}

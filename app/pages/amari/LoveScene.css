@@ -1,0 +1,206 @@
+.love-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 24px 110px;
+  overflow: hidden;
+  color: #443847;
+}
+
+.polka-hearts {
+  --heart-color: color-mix(in srgb, var(--cats-accent) 5%, transparent);
+
+  position: relative;
+  isolation: isolate;
+  background-color: var(--love-background);
+  background-size: 60px 60px;
+  overflow: hidden;
+}
+
+.polka-hearts::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 200%;
+
+  transform: rotate(10deg) translateX(-30rem);
+  z-index: -1;
+  background-repeat: repeat;
+  pointer-events: none;
+  background-color: var(--heart-color);
+
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -8 40 40'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -8 40 40'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 60px 60px;
+  mask-size: 60px 60px;
+  -webkit-mask-position: 30px 30px;
+  mask-position: 30px 30px  ;
+}
+
+.love-note {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 54px);
+  width: min(100%, 760px);
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgb(153 119 157 / 14%);
+  border-radius: 26px;
+  background: rgb(255 252 250 / 78%);
+  box-shadow: 0 18px 55px rgb(80 50 80 / 6%);
+}
+
+.love-photo {
+  position: relative;
+  padding: 10px 10px 34px;
+  background: var(--love-paper);
+  box-shadow: 0 8px 24px rgb(65 40 65 / 12%);
+  transform: rotate(-4deg);
+  transition: transform 300ms ease;
+}
+
+.love-photo:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.love-photo img {
+  position: absolute;
+  inset: 10px 10px 34px;
+  z-index: 1;
+  width: calc(100% - 20px);
+  height: calc(100% - 44px);
+  object-fit: cover;
+}
+
+.love-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  background: #f1e7f3;
+  color: #a081ad;
+}
+
+.love-photo-placeholder span {
+  font-size: 2.5rem;
+}
+
+.love-photo-placeholder p {
+  margin: 6px 0;
+  font-family: var(--cursive);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.love-photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  color: #827482;
+  text-align: center;
+  font-family: var(--cursive);
+  font-size: 0.75rem;
+}
+
+.love-message {
+  min-width: 0;
+}
+
+.love-eyebrow {
+  color: #a07fa9;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+}
+
+.love-message h2 {
+  margin: 16px 0 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.love-message h2 span {
+  color: #a17eb0;
+  font-family: var(--cursive);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.love-message > p {
+  color: #817482;
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+.love-signature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: #927c98;
+  font-family: var(--cursive);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.love-heart {
+  display: inline-block;
+  color: #c28cae;
+  font-size: 1.15rem;
+}
+
+.love-closing {
+  margin: 36px 0 0;
+  color: #98899a;
+  text-align: center;
+  font-family: var(--cursive);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.love-closing span {
+  display: block;
+  color: #b08eb8;
+}
+
+@media (max-width: 600px) {
+  .love-scene {
+    padding: 65px 20px 80px;
+  }
+
+  .love-note {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 32px;
+    width: min(100%, 400px);
+    padding: 28px 24px;
+  }
+
+  .love-photo {
+    width: min(65%, 200px);
+  }
+
+  .love-message {
+    width: 100%;
+  }
+
+  .love-message h2 {
+    font-size: 2.5rem;
+  }
+
+  .love-closing {
+    max-width: 280px;
+    margin-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .love-photo {
+    transition: none;
+  }
+}

@@ -1,0 +1,13 @@
+.bubble{
+   color: var(--blog-hl-text);
+}
+
+.bubble-title{
+   color: var(--blog-hl-text);
+   font-size: 1.1rem;
+   font-weight: 700;
+}
+
+.bubble-description{
+   color: var(--text-color);
+}
