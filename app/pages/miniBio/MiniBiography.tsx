@@ -112,7 +112,7 @@ export default function MiniBiography() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Hiiii! I'm Erio <span>(She/Her)</span>౨ৎ
+          Holaaaap! Soy Erio <span>(She/Her)</span>౨ৎ
         </motion.p>
 
         <motion.h2
@@ -134,13 +134,15 @@ export default function MiniBiography() {
           transition={{ delay: 0.45, duration: 0.6 }}
         >
           <p>
-            I am a software engineer and a weeb at heart.
+            Trabajo como ingeniera de Software y soy re weeb la verdad jsjas.
+            Bienvenid@ a mi pequeño blog, es la primer vez que hago un proyectito personal, solo para mi
+            desde que aprendí a programar.
           </p>
           <p>
-            I'm 24 from Colombia 🇨🇴!!!.
+            Tengo 24 y soy de Colombia 🇨🇴!!!.
           </p>
           <p>
-            I can speak English and Spanish.
+            I can speak English and Español.
           </p>
         </motion.p>
 
@@ -151,11 +153,11 @@ export default function MiniBiography() {
           viewport={{ once: true }}
           transition={{ delay: 0.58, duration: 0.6 }}
         >
-          I spend most of my time listening to music and playing some games. Also like to daydream about the future.
+          Paso la mayoría del tiempo escuchando música, jugando de vez en cuando algunos jueguitos y pensando en el futuro, tengo muchos planes y quiero hacer muchas cositas, gambaru~
         </motion.p>
 
         <div className="bio-card-footer">
-          <span>My bd is on april 26 if you want to give me a gift wink wink meow 🩷~</span>
+          <span>Mi cumple es el 26 de abril por si me queres dar un regalito wink wink hehe 🩷~</span>
           <motion.span
             animate={reduceMotion ? undefined : { rotate: [0, 12, 0] }}
             transition={{ duration: 3, repeat: Infinity }}

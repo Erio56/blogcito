@@ -4,9 +4,6 @@ body{
    height: 100vh;
 }
 
-/* 5e4948 */
-/* 442d2c */
-
 @font-face {
    font-family: "Sunday April";
    src: url("/public/fonts/Sunday\ April.ttf")
@@ -24,6 +21,8 @@ body{
    --cursive: "Sunday April", cursive;
    --normal: Inter, sans-serif;
    --alt-font: "Convergence", sans-serif;
+   --alt-cursive: "Bad Script", cursive;
+
 
 
 

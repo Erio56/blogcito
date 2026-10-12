@@ -99,6 +99,22 @@
   overflow-wrap: anywhere;
 }
 
+.scroll-bubble-lyric {
+  max-width: 48ch;
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--blog-hl-text);
+  color: var(--blog-hl-text);
+  font-family: var(--alt-cursive);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.scroll-bubble-lyric cite {
+  font-style: italic;
+}
+
 .scroll-bubble-index {
   position: absolute;
   top: 1rem;
@@ -136,6 +152,8 @@
 }
 
 .ytEmbeder{
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
   border-radius: 30px;
   overflow: hidden;
 }
@@ -232,6 +250,10 @@
   }
 
   .scroll-bubble p {
+    max-width: 100%;
+  }
+
+  .scroll-bubble-lyric {
     max-width: 100%;
   }
 
