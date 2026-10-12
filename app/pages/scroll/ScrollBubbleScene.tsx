@@ -4,20 +4,30 @@ import "./ScrollBubbleScene.css";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-const items = [
+const items: {
+  id: string,
+  eyebrow: string,
+  title: string,
+  description?: string,
+  ytVideo?: { id: string, title: string }
+}[] = [
   {
     id: "1",
-    eyebrow: "01 — 23245r43543",
+    eyebrow: "Kano",
     title: "sdfsadfsadfsadf",
-    description:
-      "sdafdsfsadfd.",
+    ytVideo: {
+      id: 'vKDa7yfpd2M',
+      title: 'asdfsdaf'
+    }
   },
   {
     id: "2",
     eyebrow: "02 — sdfa",
     title: "sdafasdfasfdsfsadfsadfsadfasdf",
-    description:
-      "sdafsdafsdafsdafsdafsadf",
+    ytVideo: {
+      id: 'lzil9xE0wrM',
+      title: 'sdikfjdskfa'
+    }
   },
   {
     id: "sdfsdaf",
@@ -35,13 +45,22 @@ const items = [
   },
 ];
 
+type YtEmbedProps = {
+  id: string;
+  title: string;
+};
+
+const YtEmbed = ({ id, title }: YtEmbedProps) => {
+  return <LiteYouTubeEmbed id={id} title={title} />;
+};
+
 export default function ScrollBubbleScene() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="scroll-bubble-scene">
+    <section className="scroll-bubble-scene rain">
       <header className="scroll-scene-header">
-        <span className="scene-kicker">More things</span>
+        <span className="scene-kicker">music and stuff</span>
         <h1>A few things i like, in no particular order.</h1>
         <p>meow</p>
       </header>
@@ -69,16 +88,8 @@ export default function ScrollBubbleScene() {
             </span>
 
             <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <LiteYouTubeEmbed
-              id="7bX5muCSV6k"
-              title="yeah"    
-            />
-            
-
-            <span className="scroll-bubble-index">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+            {item.description && (<p>{item.description}</p>)}
+            {item.ytVideo && <YtEmbed id={item.ytVideo.id} title={item.ytVideo.title} />}
           </motion.article>
         ))}
       </div>

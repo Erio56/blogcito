@@ -9,8 +9,8 @@
 
   svg{
     position: absolute;
-    bottom: 100%;                /* sits exactly on top of the footer */
-    margin-bottom: -1px;         /* hides the hairline seam */
+    bottom: 100%;              
+    margin-bottom: -1px;         
     left: 0;
     width: 100%;
 
@@ -44,7 +44,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin: 1rem;
   box-sizing: border-box;
   height: 850px;
   margin-inline: auto;

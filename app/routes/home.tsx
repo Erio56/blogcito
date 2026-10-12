@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return <>
     <MiniBiography/>
-    <BlogScene />;
+    <BlogScene />
     <ScrollBubbleScene/>
     <CatsScene/>
     <LoveScene />
