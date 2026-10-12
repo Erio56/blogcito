@@ -191,6 +191,15 @@ export default function MiniBiography() {
         className="bio-scroll-hint"
         href="#blog-scene"
         aria-label="Desliza hacia abajo para explorar el blog"
+        onClick={(event) => {
+          const blogScene = document.getElementById("blog-scene");
+          if (!blogScene) return;
+
+          event.preventDefault();
+          blogScene.scrollIntoView({
+            behavior: reduceMotion ? "instant" : "smooth",
+          });
+        }}
         animate={reduceMotion ? undefined : { y: [0, 7, 0] }}
         transition={{
           duration: 1.8,
