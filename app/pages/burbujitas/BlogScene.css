@@ -1,5 +1,18 @@
+*{
+  svg{
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+
+    path{
+      fill: var(--blog-background);
+    }
+  }
+}
+
 .blog-page {
-  min-height: 150vh;
+  min-height: 100vh;
   overflow: clip;
   background: var(--blog-background);
   color: var(--blog-surface);
@@ -15,6 +28,7 @@
   max-width: 800px;
   margin: 16px auto;
   font-size: clamp(2rem, 5vw, 4rem);
+  font-family: var(--cursive);
   line-height: 1.1;
   color: color-mix(in srgb, var(--blog-text) 50%, transparent);
 }
@@ -51,6 +65,13 @@
   max-height: 75%;
   object-fit: contain;
   user-select: none;
+}
+
+.central-illustration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--blog-background) 80%);
 }
 
 .bubble-position {
@@ -199,7 +220,6 @@
     padding: 16px;
     gap: 8px;
     border-radius: 20px;
-    background: rgb(255 255 255 / 82%);
     box-shadow: 0 10px 32px rgb(40 30 60 / 9%);
   }
 

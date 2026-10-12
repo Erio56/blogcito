@@ -1,6 +1,8 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import "./ScrollBubbleScene.css";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 const items = [
   {
@@ -68,6 +70,11 @@ export default function ScrollBubbleScene() {
 
             <h2>{item.title}</h2>
             <p>{item.description}</p>
+            <LiteYouTubeEmbed
+              id="7bX5muCSV6k"
+              title="yeah"    
+            />
+            
 
             <span className="scroll-bubble-index">
               {String(index + 1).padStart(2, "0")}

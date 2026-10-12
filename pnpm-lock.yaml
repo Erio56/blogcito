@@ -26,6 +26,9 @@ importers:
       react-dom:
         specifier: ^19.2.8
         version: 19.3.0(react@19.3.0)
+      react-lite-youtube-embed:
+        specifier: ^3.7.0
+        version: 3.7.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react-router:
         specifier: ^8.4.0
         version: 8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -970,6 +973,12 @@ packages:
     resolution: {integrity: sha512-JDk8dgif51OjFoDE70+OT9ICyYr+69HlmihNwp1+Nsfbna3t5sIiCa9ZJktDmQ4/1b/rn26hIAR2uYXDMr5r0Q==}
     peerDependencies:
       react: ^19.3.0
+
+  react-lite-youtube-embed@3.7.0:
+    resolution: {integrity: sha512-diu1ihZ0LUGWZPtuq2Xxx0G/DGtzBfmrlLp/wedh6zXn8/ScH3zhJGhzN5wEbQTK/mOKmgAP2n58e7q6Jlbv6w==}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
 
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
@@ -1972,6 +1981,11 @@ snapshots:
     dependencies:
       react: 19.3.0
       scheduler: 0.28.0
+
+  react-lite-youtube-embed@3.7.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+    dependencies:
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
 
   react-refresh@0.18.0: {}
 
