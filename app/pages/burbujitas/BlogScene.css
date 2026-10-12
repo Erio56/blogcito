@@ -1,7 +1,16 @@
-*{
+
+.blog-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: show;
+  background: var(--blog-background);
+  color: var(--blog-surface);
+  font-family: var(--normal);
+
   svg{
     position: absolute;
-    bottom: 100px;
+    bottom: 100%;                /* sits exactly on top of the footer */
+    margin-bottom: -1px;         /* hides the hairline seam */
     left: 0;
     width: 100%;
 
@@ -9,14 +18,6 @@
       fill: var(--blog-background);
     }
   }
-}
-
-.blog-page {
-  min-height: 100vh;
-  overflow: clip;
-  background: var(--blog-background);
-  color: var(--blog-surface);
-  font-family: var(--normal);
 }
 
 .blog-header {
@@ -59,7 +60,18 @@
   pointer-events: none;
 }
 
+.illustration-shadow,
 .central-illustration {
+  grid-area: 1 / 1;
+}
+
+.illustration-shadow {
+  z-index: 0;
+}
+
+.central-illustration {
+  position: relative;
+  z-index: 1;
   display: block;
   width: min(60%, 520px);
   max-height: 75%;
@@ -67,11 +79,14 @@
   user-select: none;
 }
 
-.central-illustration::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, var(--blog-background) 80%);
+.illustration-shadow {
+  width: min(60%, 520px);
+  aspect-ratio: 1;
+  background: var(--media-accent);
+  opacity: 0.55;
+  transform: translate(14px, 14px);
+  -webkit-mask: url("/assets/erio.png") center / contain no-repeat;
+  mask: url("/assets/erio.png") center / contain no-repeat;
 }
 
 .bubble-position {
@@ -183,6 +198,11 @@
   .central-illustration {
     width: min(78%, 320px);
     max-height: 300px;
+  }
+
+  .illustration-shadow {
+    width: min(78%, 300px);
+    transform: translate(9px, 9px);
   }
 
   /* Two bubbles above the illustration. */

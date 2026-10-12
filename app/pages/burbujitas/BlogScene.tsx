@@ -63,38 +63,37 @@ export default function BlogScene() {
   const illustrationRotate = useTransform(scrollYProgress, [0, 1], [-3, 3]);
 
   return (
-    <>
-      <Wave />
-      <main className="blog-page">
-        <header className="blog-header">
-          <p className="eyebrow">~✦✳✦~~✳✦✳--------✳✦✳~~✦✳✦~</p>
-          <h1>Things I enjoy.</h1>
-          <p>Scroll around. Pick a bubble.</p>
-        </header>
+    <main className="blog-page">
+    <Wave />
+      <header className="blog-header">
+        <p className="eyebrow">~✦✳✦~~✳✦✳--------✳✦✳~~✦✳✦~</p>
+        <h1>Things I enjoy.</h1>
+        <p>Scroll around. Pick a bubble.</p>
+      </header>
 
-        <section
-          ref={sceneRef}
-          className="bubble-scene"
-          aria-label="Explore my personal blog"
-        >
-          <div className="illustration-position">
-            <motion.img
-              className="central-illustration"
-              src="./assets/erio.png"
-              alt="Central blog illustration"
-              style={{
-                y: illustrationY,
-                rotate: illustrationRotate,
-              }}
-              draggable={false}
-            />
-          </div>
+      <section
+        ref={sceneRef}
+        className="bubble-scene"
+        aria-label="Explore my personal blog"
+      >
+        <div className="illustration-position">
+          <div className="illustration-shadow" aria-hidden="true" />
+          <motion.img
+            className="central-illustration"
+            src="./assets/erio.png"
+            alt="Central blog illustration"
+            style={{
+              y: illustrationY,
+              rotate: illustrationRotate,
+            }}
+            draggable={false}
+          />
+        </div>
 
-          {bubbles.map((bubble) => (
-            <Bubble key={bubble.title} {...bubble} />
-          ))}
-        </section>
-      </main>
-    </>
+        {bubbles.map((bubble) => (
+          <Bubble key={bubble.title} {...bubble} />
+        ))}
+      </section>
+    </main>
   );
 }

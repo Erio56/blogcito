@@ -1,0 +1,71 @@
+.wip-scene {
+  display: grid;
+  place-items: center;
+  min-height: 560px;
+  padding: 120px 24px;
+  background-color: #fff;
+  background-image:
+    linear-gradient(#f1eaf6 1px, transparent 1px),
+    linear-gradient(90deg, #f1eaf6 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.wip-card {
+  width: min(100%, 540px);
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid rgba(88, 69, 96, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 52px rgba(60, 46, 66, 0.08);
+  text-align: center;
+}
+
+.wip-kicker {
+  margin: 0 0 14px;
+  color: var(--bio-accent-medium);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wip-card h1 {
+  margin: 0;
+  color: var(--blog-text);
+  font-size: clamp(2.5rem, 7vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  text-transform: lowercase;
+}
+
+.wip-copy {
+  max-width: 32ch;
+  margin: 18px auto 0;
+  color: var(--text-color-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.wip-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+  .wip-scene {
+    min-height: auto;
+    padding: 100px 20px;
+  }
+
+  .wip-card {
+    padding: 26px 22px;
+    border-radius: 20px;
+  }
+
+  .wip-copy {
+    font-size: 0.96rem;
+  }
+}

@@ -5,6 +5,7 @@ import MiniBiography from "~/pages/miniBio/MiniBiography";
 import CatsScene from "~/pages/gatitas/CatsScene";
 import LoveScene from "~/pages/amari/LoveScene";
 import RandomMediaScene from "~/pages/randomMedia/RandomMediaScene";
+import Wip from "~/pages/wip/wip";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -20,6 +21,7 @@ export default function Home() {
     <ScrollBubbleScene/>
     <CatsScene/>
     <LoveScene />
-    <RandomMediaScene/>
+    <Wip/>
+    {/* <RandomMediaScene/> */}
   </> 
 }

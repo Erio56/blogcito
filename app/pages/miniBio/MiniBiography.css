@@ -156,8 +156,8 @@
 
 .bio-floating-note {
   position: absolute;
-  right: max(8%, calc((100% - 950px) / 2));
-  bottom: 16%;
+  right: max(8%, calc((100% - 750px) / 2));
+  top: 15%;
   color: var(--blog-accent);
   font-family: var(--cursive);
   font-size: 0.95rem;
