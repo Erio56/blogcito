@@ -20,7 +20,6 @@
   position: relative;
   width: min(100%, 590px);
   padding: clamp(28px, 6vw, 52px);
-  border: 1px solid var(--bio-shadow);
   border-radius: 28px;
   background: var(--bio-surface);
   color: var(--bio-text);
@@ -41,7 +40,7 @@
 .bio-card-topline {
   padding-bottom: 0.3rem;
   font-family: var(--cursive);
-  border-bottom: 1px dashed rgba(61, 14, 97, 0.24);
+  border-bottom: 2px dashed #c68f93;
   font-size: 1rem;
   letter-spacing: 0.12em;
   opacity: 0.8;
@@ -106,10 +105,11 @@
   margin-top: 36px;
   padding-top: 18px;
   font-family: var(--alt-font);
-  border-top: 1px dashed rgb(105 85 120 / 24%);
+  border-top: 3px dashed #ccccff;
   color: var(--bio-muted-soft);
   font-size: 0.65rem;
   letter-spacing: 0.12em;
+
 }
 
 .bio-card-footer span:last-child {

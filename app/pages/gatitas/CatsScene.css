@@ -218,8 +218,8 @@
 .cats-decoration {
   position: absolute;
   z-index: -1;
-  color: #c9b4d4;
-  opacity: 0.45;
+  color: #452a31;
+  opacity: 1;
   pointer-events: none;
   animation: cats-drift 6s ease-in-out infinite;
 }

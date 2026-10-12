@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import "./ScrollBubbleScene.css";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import { div } from "motion/react-client";
 
 const items: {
   id: string,
@@ -51,7 +52,7 @@ type YtEmbedProps = {
 };
 
 const YtEmbed = ({ id, title }: YtEmbedProps) => {
-  return <LiteYouTubeEmbed id={id} title={title} />;
+  return <div className="ytEmbeder"><LiteYouTubeEmbed id={id} title={title} /></div>;
 };
 
 export default function ScrollBubbleScene() {

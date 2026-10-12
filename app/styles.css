@@ -57,16 +57,16 @@ body{
   --bio-decoration: rgba(140, 67, 204, 0.6);
 
   /* Cats scene */
-  --cats-text: #3e3545;
-  --cats-background: #fbf8fc;
-  --cats-accent: #9878a8;
-  --cats-accent-soft: #a17db5;
+  --cats-text: #452a31;
+  --cats-background: #fdfdfd;
+  --cats-accent: #9b9bf9;
+  --cats-accent-soft: #CCCCFF;
   --cats-muted: #827786;
   --cats-white: #fff;
   --cats-border: #eee5f3;
 
   /* Love scene */
-  --love-text: var(--cats-text);
+  --love-text: #ea0909;
   --love-background: var(--cats-background);
   --love-accent: var(--cats-accent);
   --love-muted: var(--cats-muted);

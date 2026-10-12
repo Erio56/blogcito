@@ -42,15 +42,6 @@ export default function CatsScene() {
       </div>
 
       <header className="cats-header">
-        <motion.span
-          className="cats-eyebrow"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Mis hijas
-        </motion.span>
-
         <motion.h1
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -104,9 +95,6 @@ export default function CatsScene() {
               <div className="cat-photo-placeholder">
                 <small>{cat.image}</small>
               </div>
-              <span className="cat-photo-number">
-                0{index + 1} / 02
-              </span>
             </div>
 
             <div className="cat-card-content">
