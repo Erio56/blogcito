@@ -47,7 +47,8 @@
   width: min(100%, 1600px);
   overflow: visible;
   box-sizing: border-box;
-  height: 850px;
+  min-height: var(--bubble-scene-height, 850px);
+  height: auto;
   margin-inline: auto;
   isolation: isolate;
 }

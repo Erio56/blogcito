@@ -13,6 +13,7 @@ type FloatingBubbleProps = {
   delay?: number;
   scrollDistance?: number;
   className?: string;
+  ref?: (element: HTMLDivElement | null) => void;
 };
 
 export function FloatingBubble({
@@ -22,6 +23,7 @@ export function FloatingBubble({
   delay = 0,
   scrollDistance = -60,
   className = "",
+  ref,
 }: FloatingBubbleProps) {
   const { scrollYProgress } = useScroll();
 
@@ -33,6 +35,7 @@ export function FloatingBubble({
 
   return (
     <motion.div
+      ref={ref}
       className={`bubble-position ${className}`}
       style={{
         left: x,

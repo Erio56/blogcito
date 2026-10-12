@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -15,7 +15,7 @@ const bubbles = [
     content:
       "Su música me ha acompañado en mis peores y mejores momentos, amo su emotiva voz que le dan un toque que para mi es simplemente especial.",
     x: "clamp(24px, calc(50% - 650px), 320px)",
-    y: "12%",
+    y: "102px",
     delay: 0,
     mobileOrder: 1,
     interaction: {
@@ -28,7 +28,7 @@ const bubbles = [
     description: "Soy una adicta al Yuri. No olvidar siempre rezar a Adashima",
     content: "Mis favoritos son.",
     x: "clamp(50%, calc(50% + 280px), calc(100% - 264px))",
-    y: "25%",
+    y: "213px",
     delay: 0.4,
     mobileOrder: 2,
     items: ["Adachi and Shimamura", " Kitanai Kimi ga Ichiban Kawaii (no soy redflag lo juro)", " Tensei Oujo to Tensai Reijou no Mahou Kakumei ", "Yagate Kimi ni Naru", " Kamiina Botan, Yoeru Sugata wa Yuri no Hana"],
@@ -42,7 +42,7 @@ const bubbles = [
     description: "Mi anime favorito. Click para ver otros animes que me gustan",
     content: "No es para todo el mundo pero amo su misterio al rededor del abyss, amo sus personajes (Vueko <3), amo su música. Otros animes que me gustan son Bocchi the Rock!, y Gochiusa, amo Gochiusa",
     x: "clamp(24px, calc(50% - 650px), 320px)",
-    y: "63%",
+    y: "536px",
     delay: 0.8,
     mobileOrder: 4,
     interaction: {
@@ -53,16 +53,11 @@ const bubbles = [
   {
     title: "Juegos",
     description: "Algunos juegos que me gustan.",
-    content: "Music, art, technology, and everything else I enjoy exploring.",
     x: "clamp(50%, calc(50% + 280px), calc(100% - 264px))",
-    y: "69%",
+    y: "587px",
     delay: 1.2,
     mobileOrder: 5,
     items: ["Halo (mi saga favorita)", "Apex Legends (Le tengo 3k+ horas)", "Subnautica", "Aokana", "Minecraft", "Elden ring", "Minecraft", "Cities Skylines", "Persona 3 Reloaded", "Persona 4 Golder"],
-    interaction: {
-      href: "https://music.youtube.com/@erio056",
-      label: "Listen with me",
-    },
   },
 ];
 
@@ -73,8 +68,42 @@ const Wave = () => {
 
 export default function BlogScene() {
   const sceneRef = useRef<HTMLElement>(null);
+  const expandedBubbleElement = useRef<HTMLDivElement | null>(null);
   const [openBubble, setOpenBubble] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
+  const setExpandedBubbleElement = useCallback(
+    (element: HTMLDivElement | null) => {
+      expandedBubbleElement.current = element;
+    },
+    []
+  );
+
+  useLayoutEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+
+    const updateSceneHeight = () => {
+      const bubble = expandedBubbleElement.current;
+      if (!bubble) {
+        scene.style.removeProperty("--bubble-scene-height");
+        return;
+      }
+
+      const bubbleBottom = bubble.getBoundingClientRect().bottom;
+      const sceneTop = scene.getBoundingClientRect().top;
+      const requiredHeight = bubbleBottom - sceneTop + 48;
+      scene.style.setProperty("--bubble-scene-height", `${Math.max(850, requiredHeight)}px`);
+    };
+
+    updateSceneHeight();
+
+    const bubble = expandedBubbleElement.current;
+    if (!bubble) return;
+
+    const resizeObserver = new ResizeObserver(updateSceneHeight);
+    resizeObserver.observe(bubble);
+    return () => resizeObserver.disconnect();
+  }, [openBubble]);
 
   const { scrollYProgress } = useScroll({
     target: sceneRef,
@@ -118,6 +147,7 @@ export default function BlogScene() {
             key={bubble.title}
             {...bubble}
             expanded={openBubble === bubble.title}
+            expandedElementRef={setExpandedBubbleElement}
             onToggle={() =>
               setOpenBubble((current) =>
                 current === bubble.title ? null : bubble.title

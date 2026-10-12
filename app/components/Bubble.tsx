@@ -22,6 +22,7 @@ type BubbleProps = {
   items?: string[];
   expanded: boolean;
   onToggle: () => void;
+  expandedElementRef: (element: HTMLDivElement | null) => void;
 };
 
 export function Bubble({
@@ -37,9 +38,11 @@ export function Bubble({
   items,
   expanded,
   onToggle,
+  expandedElementRef,
 }: BubbleProps) {
   return (
     <FloatingBubble
+      ref={expanded ? expandedElementRef : undefined}
       x={x}
       y={y}
       delay={delay}
